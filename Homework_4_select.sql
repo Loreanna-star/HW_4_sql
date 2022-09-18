@@ -52,9 +52,7 @@ JOIN albums a ON als.album_id = a.album_id
 JOIN tracks t ON t.album_id = a.album_id
 WHERE duration = (SELECT MIN(duration) from tracks)
 
---название альбомов, содержащих наименьшее количество треков. =(((
---SELECT album_id, COUNT(track_id) numb FROM tracks t
-
+--название альбомов, содержащих наименьшее количество треков.
 SELECT album_name FROM albums a
 JOIN tracks t ON t.album_id = a.album_id
 GROUP BY album_name
